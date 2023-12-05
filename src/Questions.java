@@ -4,31 +4,26 @@ import java.util.Scanner;
 public class Questions {
     String task;
     String details;
+    String deadline;
     public void about() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Tell me about the task: ");
         task = scanner.nextLine();
-        System.out.print("Do you want to give a description for the task?\n\tType 'Yes' if you want to else type 'No'");
+        System.out.print("Do you want to give a description for the task?\n\tType 'Yes' if you want to.");
         if(Objects.equals(scanner.next(), "Yes")){
             details = scanner.nextLine();
         }
+        scanner.close();
     }
 
-    public String taskTime() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("When do you have to do this task");
-        System.out.println("Please give the time in 'hr:min' (24hr) format: ");
-        return scanner.nextLine();
-    }
 
-    public String deadline() {
+    public void askDeadline() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Do you want to keep a deadline or time limit for the task?\n\tType 'Yes' if you want to else type 'No'");
+        System.out.println("Do you want to keep a deadline or time limit for the task?\n\tType 'Yes' if you want to.");
         if (Objects.equals(scanner.next(), "Yes")) {
             System.out.println("Please state the time limit in hr:min format: ");
-            return scanner.nextLine();
+            deadline = scanner.next();
         }
-        return "";
     }
 
     public void finish() {

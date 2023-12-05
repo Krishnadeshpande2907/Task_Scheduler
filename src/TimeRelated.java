@@ -1,8 +1,10 @@
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class TimeRelated {
+    String taskTime;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm, dd-MM");
     public String startTime() {
         System.out.println("time is being taken");
@@ -24,5 +26,12 @@ public class TimeRelated {
         double minutes = timeElapsed.toMinutes()%60;
 
         return String.format("%.0f:%.0f", hours, minutes);
+    }
+
+    public void taskTime() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("When do you have to do this task");
+        System.out.println("Please give the time in 'hr:min' (24hr) format: ");
+        taskTime = scanner.nextLine();
     }
 }

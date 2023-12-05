@@ -7,7 +7,7 @@ public class Main {
         // import files
         TimeRelated timeQuestions = new TimeRelated();
         Questions question = new Questions();
-//        Schedule scheduleObj = new Schedule();
+        // Schedule scheduleObj = new Schedule();
 
         // Different time intervals:
         // schedule.every(2).hours.do(job);
@@ -24,24 +24,23 @@ public class Main {
         //     schedule.run_pending();
         //     tm.sleep(1);
 
-        // Actual Code below:
-        // Scanner scanner = new Scanner(System.in);
 
+        // Actual Code below:
         // askingUser about the project -> not done yet
         question.about();
 
         // Asking the time to do that task
-        String timeOfTask = question.taskTime();
-        System.out.println(timeOfTask);
+        timeQuestions.taskTime();
 
         // Amount of time estimated to do that task
-        String timeLimitIfRequired = question.deadline();
+        question.askDeadline();
 
-        // getTime = Time
+        // Checking the timeRelated folder if startTime function runs correctly
         String taskStarted = timeQuestions.startTime();
         System.out.println("time: ");
         System.out.println(taskStarted);
 
+        // Checking the timeRelated folder if timeTaken function runs correctly
         String timeTaken = timeQuestions.timeTaken(taskStarted);
         System.out.println(timeTaken);
     }
