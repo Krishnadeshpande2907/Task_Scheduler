@@ -1,15 +1,11 @@
-//import schedule.Schedule;
-//import Time.Time;
-//import questions.Questions;
-
 public class Main {
     public static void main(String[] args) {
-        // import files
+        // objects
         TimeRelated timeQuestions = new TimeRelated();
         Questions question = new Questions();
         // Schedule scheduleObj = new Schedule();
 
-        // Different time intervals:
+        // Different time intervals practice in python:
         // schedule.every(2).hours.do(job);
         // schedule.every(2).minutes.do(job);
         // schedule.every(2).day.do(job);
@@ -26,7 +22,7 @@ public class Main {
 
 
         // Actual Code below:
-        // askingUser about the project -> not done yet
+        // askingUser about the project
         question.about();
 
         // Asking the time to do that task
@@ -35,13 +31,10 @@ public class Main {
         // Amount of time estimated to do that task
         question.askDeadline();
 
-        // Checking the timeRelated folder if startTime function runs correctly
-        String taskStarted = timeQuestions.startTime();
-        System.out.println("time: ");
-        System.out.println(taskStarted);
+        // Getting the time at which I start the task
+        timeQuestions.startTime();
 
-        // Checking the timeRelated folder if timeTaken function runs correctly
-        String timeTaken = timeQuestions.timeTaken(taskStarted);
-        System.out.println(timeTaken);
+        // Time taken to complete the task
+        timeQuestions.timeTaken();
     }
 }

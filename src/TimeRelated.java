@@ -1,37 +1,35 @@
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class TimeRelated {
-    String taskTime;
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm, dd-MM");
-    public String startTime() {
-        System.out.println("time is being taken");
-        LocalDateTime currentTime = LocalDateTime.now();
-        return currentTime.format(formatter);
+    LocalDateTime taskTime;
+    LocalDateTime taskStartTime;
+    public void startTime() {
+        System.out.println("Start time is being taken");
+        taskStartTime = LocalDateTime.now();
     }
 
-    public String timeTaken(String started) {
-        System.out.println("Started arg: ");
-        System.out.println(started);
+    public void timeTaken() {
+        LocalTime endTime = LocalTime.now();
+        DateTimeFormatter timeTakenFormat = DateTimeFormatter.ofPattern("HH:mm");
+        System.out.println("end time: " + endTime.format(timeTakenFormat));
 
-        LocalDateTime endTime = LocalDateTime.now();
-        System.out.println("end time: " + endTime.format(formatter));
-
-        LocalDateTime startDateTime = LocalDateTime.parse(started, formatter);
-        Duration timeElapsed = Duration.between(startDateTime, endTime);
+        Duration timeElapsed = Duration.between(taskStartTime, endTime);
 
         double hours = timeElapsed.toHours();
         double minutes = timeElapsed.toMinutes()%60;
-
-        return String.format("%.0f:%.0f", hours, minutes);
+        System.out.println("Total time taken for completing this task: " + hours + ":" + minutes);
     }
 
     public void taskTime() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("When do you have to do this task");
-        System.out.println("Please give the time in 'hr:min' (24hr) format: ");
-        taskTime = scanner.nextLine();
+        System.out.println("Please give the time in 'YYYY-MM-DD HH:mm' (24hr) format: ");
+        String userTaskTime = scanner.nextLine();
+        DateTimeFormatter formatUserTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        taskTime = LocalDateTime.parse(userTaskTime, formatUserTime);
     }
 }
