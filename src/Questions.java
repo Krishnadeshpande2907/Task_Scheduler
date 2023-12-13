@@ -18,19 +18,20 @@ public class Questions {
 
     public void askDeadline() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Do you want to keep a deadline or time limit for the task?\n\tType 'Yes' if you want to.");
+        System.out.print("\nDo you want to keep a deadline or time limit for the task?\n\tType 'Yes' if you want to: ");
         if (Objects.equals(scanner.next(), "Yes")) {
             System.out.println("Please state the time limit in YYYY-MM-DD HH:mm format: ");
             deadline = scanner.next();
         }
     }
 
-    public void finish() {
+    public boolean finish() {
         Scanner scanner = new Scanner(System.in);
         String confirmation = "";
         System.out.print("When finished type 'done' ahead: ");
         while (!confirmation.equals("done")) {
             confirmation = scanner.nextLine();
         }
+        return true;
     }
 }
