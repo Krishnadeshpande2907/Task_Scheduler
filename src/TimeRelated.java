@@ -16,8 +16,8 @@ public class TimeRelated {
 
         Duration timeElapsed = Duration.between(taskStartTime, endTime);
 
-        double hours = timeElapsed.toHours();
-        double minutes = timeElapsed.toMinutes()%60;
+        int hours = (int) timeElapsed.toHours();
+        int minutes = (int) timeElapsed.toMinutes()%60;
 
         DateTimeFormatter endTimeTakenFormat = DateTimeFormatter.ofPattern("HH:mm");
         System.out.println("end time: " + endTime.format(endTimeTakenFormat));
