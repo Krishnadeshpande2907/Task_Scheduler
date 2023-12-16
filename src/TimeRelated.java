@@ -1,14 +1,19 @@
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TimeRelated {
-    LocalDateTime taskTime;
-    LocalDateTime taskStartTime;
+    public static LocalDateTime taskTime;
+    private LocalDateTime taskStartTime;
     public void startTime() {
-        System.out.println("Start time is taken");
-        taskStartTime = LocalDateTime.now();
+        System.out.print("Type 'starting' when you will start the task: ");
+        Scanner scanner = new Scanner(System.in);
+        if (Objects.equals(scanner.next(), "starting")) {
+            System.out.println("Start time is taken");
+            taskStartTime = LocalDateTime.now();
+        }
     }
 
     public void timeTaken() {
@@ -31,5 +36,9 @@ public class TimeRelated {
         String userTaskTime = scanner.nextLine();
         DateTimeFormatter formatUserTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         taskTime = LocalDateTime.parse(userTaskTime, formatUserTime);
+    }
+
+    public static LocalDateTime getUserTaskStartTime() {
+        return taskTime;
     }
 }

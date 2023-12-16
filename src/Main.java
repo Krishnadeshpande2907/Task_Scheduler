@@ -31,6 +31,9 @@ public class Main {
         // Amount of time estimated to do that task
         question.askDeadline();
 
+        Reminder reminder = new Reminder();
+        reminder.remind();
+
 //        Creating while loop till the task is executed
         boolean taskDone = false;
         while (!taskDone){

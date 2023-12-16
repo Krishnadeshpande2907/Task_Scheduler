@@ -15,7 +15,6 @@ public class Questions {
         }
     }
 
-
     public void askDeadline() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nDo you want to keep a deadline or time limit for the task?\n\tType 'Yes' if you want to: ");
