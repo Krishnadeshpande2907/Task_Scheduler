@@ -8,7 +8,7 @@ public class Reminder {
             try {
                 Thread.sleep(10000); // Wait for 10 seconds
             } catch (InterruptedException e) {
-                System.out.println("Reminder interrupted");
+                e.printStackTrace();
             }
         }
         System.out.println("It is time to do your task");
