@@ -49,7 +49,3 @@ This project is a simple Task Manager running entirely on the terminal, designed
 ## Contribution
 
 Contributions are welcome! Feel free to fork the project, make improvements, and submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License].
