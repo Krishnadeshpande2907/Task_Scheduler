@@ -53,9 +53,7 @@ public class Questions {
 
     public void info(){
         System.out.println("Task: " + task);
-        System.out.println("Details of the task: " + details);
-        if(deadline!=null){
-            System.out.println("Deadline of the Task " + deadline);
-        }
+        if(details!=null)   System.out.println("Details of the task: " + details);
+        if(deadline!=null)  System.out.println("Deadline of the Task " + deadline);
     }
 }
