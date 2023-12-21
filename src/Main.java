@@ -15,7 +15,13 @@ public class Main {
         question.askDeadline();
 
         Reminder reminder = new Reminder();
-        reminder.remind();
+
+//        Asking if the task should repeat
+        if(question.repeat()){
+            reminder.repeatingReminders();
+        }else{
+            reminder.remind();
+        }
 
 //        Creating while loop till the task is executed
         boolean taskDone = false;
@@ -24,6 +30,9 @@ public class Main {
             timeQuestions.startTime();
             taskDone = question.finish();
         }
+
+//        Info regarding the task
+        question.info();
 
         // Time taken to complete the task
         timeQuestions.timeTaken();
