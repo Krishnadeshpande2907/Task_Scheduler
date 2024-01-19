@@ -12,7 +12,7 @@ public class Questions {
         System.out.println("Tell me about the task: ");
         task = scanner.nextLine();
         System.out.print("Do you want to give a description for the task?\n\tType 'Yes' if you want to: ");
-        if(Objects.equals(scanner.nextLine(), "Yes"))   details = scanner.nextLine();
+        if(Objects.equals(scanner.nextLine(), "Yes"))   this.details = scanner.nextLine();
     }
 
     public void askDeadline() {
@@ -20,7 +20,7 @@ public class Questions {
         System.out.print("\nDo you want to keep a deadline or time limit for the task?\n\tType 'Yes' if you want to: ");
         if (Objects.equals(scanner.next(), "Yes")) {
             System.out.println("Please state the time limit in YYYY-MM-DD HH:mm format: ");
-            deadline = scanner.next();
+            this.deadline = scanner.next();
         }
     }
 

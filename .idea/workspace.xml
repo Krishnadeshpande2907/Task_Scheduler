@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ee2828f-dae1-4c7e-a6db-056952b5f0a8" name="Changes" comment="Added new methods (repeating reminders)">
+    <list default="true" id="5ee2828f-dae1-4c7e-a6db-056952b5f0a8" name="Changes" comment="Corrected ReadMe file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Questions.java" afterDir="false" />
     </list>
@@ -24,10 +24,10 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -176,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703154749847</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Made a ReadMe file and insignificant changes in info()">
+      <option name="closed" value="true" />
+      <created>1703156442388</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703156442388</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Corrected ReadMe file">
+      <option name="closed" value="true" />
+      <created>1703156547183</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1703156547183</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +236,8 @@
     <MESSAGE value="Added repeat() and improved info()" />
     <MESSAGE value="Added repeatingReminders() [Not finished]" />
     <MESSAGE value="Added new methods (repeating reminders)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new methods (repeating reminders)" />
+    <MESSAGE value="Made a ReadMe file and insignificant changes in info()" />
+    <MESSAGE value="Corrected ReadMe file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected ReadMe file" />
   </component>
 </project>
