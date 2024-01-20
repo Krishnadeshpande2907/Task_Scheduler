@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ee2828f-dae1-4c7e-a6db-056952b5f0a8" name="Changes" comment="Corrected ReadMe file">
+    <list default="true" id="5ee2828f-dae1-4c7e-a6db-056952b5f0a8" name="Changes" comment="added this. keyword to details and deadline">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Questions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Questions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Reminder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Reminder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TimeRelated.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TimeRelated.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
 }</component>
   <component name="SharedIndexes">
@@ -192,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703156547183</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added this. keyword to details and deadline">
+      <option name="closed" value="true" />
+      <created>1705644119473</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1705644119473</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,6 +249,7 @@
     <MESSAGE value="Added new methods (repeating reminders)" />
     <MESSAGE value="Made a ReadMe file and insignificant changes in info()" />
     <MESSAGE value="Corrected ReadMe file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected ReadMe file" />
+    <MESSAGE value="added this. keyword to details and deadline" />
+    <option name="LAST_COMMIT_MESSAGE" value="added this. keyword to details and deadline" />
   </component>
 </project>

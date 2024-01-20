@@ -1,10 +1,11 @@
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Questions {
     static String task;
     String details;
-    String deadline;
+    private String deadline;
     static long interval;
     static int  numberOfTimes;
     public void about() {
@@ -20,7 +21,8 @@ public class Questions {
         System.out.print("\nDo you want to keep a deadline or time limit for the task?\n\tType 'Yes' if you want to: ");
         if (Objects.equals(scanner.next(), "Yes")) {
             System.out.println("Please state the time limit in YYYY-MM-DD HH:mm format: ");
-            this.deadline = scanner.next();
+            scanner.nextLine();
+            deadline = scanner.nextLine();
         }
     }
 
@@ -43,17 +45,43 @@ public class Questions {
 
     public static String getTask(){return task;}
 
-    public boolean finish() {
+    public boolean finish(){
+        System.out.println("When finished type 'done'");
         Scanner scanner = new Scanner(System.in);
-        String confirmation = "";
-        System.out.print("When finished type 'done' ahead: ");
-        while (!confirmation.equals("done"))    confirmation = scanner.nextLine();
+        System.out.println("The deadline for this task is: " + deadline);
+
+        if(deadline!=null){
+            LocalDateTime deadlineInFormat = TimeRelated.getTimeInFormat(deadline);
+            Thread deadlineThread = getThread(deadlineInFormat);
+
+            String confirmation = "";
+            while (!confirmation.equals("done"))    confirmation = scanner.nextLine();
+            deadlineThread.interrupt();
+        } else {
+            String confirmation = "";
+            while (!confirmation.equals("done"))    confirmation = scanner.nextLine();
+        }
         return true;
+    }
+
+    private static Thread getThread(LocalDateTime deadlineInFormat) {
+        Thread deadlineThread = new Thread(() -> {
+            while (LocalDateTime.now().isBefore(deadlineInFormat)) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println("Deadline has been passed!!!");
+        });
+        deadlineThread.start();
+        return deadlineThread;
     }
 
     public void info(){
         System.out.println("Task: " + task);
         if(details!=null)   System.out.println("Details of the task: " + details);
-        if(deadline!=null)  System.out.println("Deadline of the Task " + deadline);
+        if(deadline!=null)  System.out.println("Deadline of the Task was: " + deadline);
     }
 }

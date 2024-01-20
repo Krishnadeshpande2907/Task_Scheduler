@@ -8,13 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class Reminder {
 
     public void remind(){
-        while (LocalDateTime.now().isBefore(TimeRelated.getUserTaskStartTime()) || LocalDateTime.now().isEqual(TimeRelated.getUserTaskStartTime())) {
-            try {
-                Thread.sleep(10000); // Wait for 10 seconds
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        while (LocalDateTime.now().isBefore(TimeRelated.getUserTaskStartTime())){}
         System.out.println("It is time to do your task");
     }
 

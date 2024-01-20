@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class TimeRelated {
     public static LocalDateTime taskTime;
     private LocalDateTime taskStartTime;
+
     public void startTime() {
         System.out.print("Type 'starting' when you will start the task: ");
         Scanner scanner = new Scanner(System.in);
@@ -22,10 +23,11 @@ public class TimeRelated {
         Duration timeElapsed = Duration.between(taskStartTime, endTime);
 
         int hours = (int) timeElapsed.toHours();
-        int minutes = (int) timeElapsed.toMinutes()%60;
+        int minutes = (int) timeElapsed.toMinutes() % 60;
 
-        DateTimeFormatter endTimeTakenFormat = DateTimeFormatter.ofPattern("HH:mm");
-        System.out.println("end time: " + endTime.format(endTimeTakenFormat));
+        DateTimeFormatter timeTakenFormatForUser = DateTimeFormatter.ofPattern("HH:mm");
+        System.out.println("You started at " + taskStartTime.format(timeTakenFormatForUser));
+        System.out.println("You finished the task " + Questions.task + " at: " + endTime.format(timeTakenFormatForUser));
         System.out.println("Total time taken for completing this task: " + hours + ":" + minutes);
     }
 
@@ -34,11 +36,15 @@ public class TimeRelated {
         System.out.println("\nWhen do you have to do this task");
         System.out.println("Please give the time in 'YYYY-MM-DD HH:mm' (24hr) format: ");
         String userTaskTime = scanner.nextLine();
-        DateTimeFormatter formatUserTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        taskTime = LocalDateTime.parse(userTaskTime, formatUserTime);
+        taskTime = getTimeInFormat(userTaskTime);
     }
 
     public static LocalDateTime getUserTaskStartTime() {
         return taskTime;
+    }
+
+    public static LocalDateTime getTimeInFormat(String time){
+        DateTimeFormatter formatUserTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        return LocalDateTime.parse(time, formatUserTime);
     }
 }
