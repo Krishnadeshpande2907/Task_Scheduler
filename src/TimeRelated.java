@@ -1,20 +1,23 @@
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class TimeRelated {
-    public static LocalDateTime taskTime;
+    private static LocalDateTime taskTime;
     private LocalDateTime taskStartTime;
 
     public void startTime() {
         System.out.print("Type 'starting' when you will start the task: ");
         Scanner scanner = new Scanner(System.in);
-        if (Objects.equals(scanner.next(), "starting")) {
+        String userInput = scanner.next().toLowerCase();
+        if (Pattern.matches("(?i)starting", userInput)) {
             System.out.println("Start time is taken");
             taskStartTime = LocalDateTime.now();
         }
+        // scanner.close();
     }
 
     public void timeTaken() {
@@ -27,24 +30,42 @@ public class TimeRelated {
 
         DateTimeFormatter timeTakenFormatForUser = DateTimeFormatter.ofPattern("HH:mm");
         System.out.println("You started at " + taskStartTime.format(timeTakenFormatForUser));
-        System.out.println("You finished the task " + Questions.task + " at: " + endTime.format(timeTakenFormatForUser));
+        System.out.println("You finished the task '" + Questions.getTask() + "' at: " + endTime.format(timeTakenFormatForUser));
         System.out.println("Total time taken for completing this task: " + hours + ":" + minutes);
     }
 
     public void taskTime() {
+        System.out.println("\nWhen do you have to do this task\n");
+        
+        taskTime = getTimeInFormat();
+
+        System.out.println("Task scheduled for: " + taskTime);
+    }
+
+    public static LocalDateTime getUserTaskStartTime() { return taskTime; }
+
+    public static LocalDateTime getTimeInFormat(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nWhen do you have to do this task");
-        System.out.println("Please give the time in 'YYYY-MM-DD HH:mm' (24hr) format: ");
-        String userTaskTime = scanner.nextLine();
-        taskTime = getTimeInFormat(userTaskTime);
-    }
+        // 1. Mandatory Fields
+        System.out.print("Enter Hour (0-23): ");
+        int hour = Integer.parseInt(scanner.nextLine());
+        
+        System.out.print("Enter Minute (0-59): ");
+        int min = Integer.parseInt(scanner.nextLine());
 
-    public static LocalDateTime getUserTaskStartTime() {
-        return taskTime;
-    }
+        // 2. Optional Fields (Defaults to today/current month)
+        LocalDate today = LocalDate.now();
 
-    public static LocalDateTime getTimeInFormat(String time){
-        DateTimeFormatter formatUserTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        return LocalDateTime.parse(time, formatUserTime);
+        System.out.print("(Optional) Enter Day (Press Enter for " + today.getDayOfMonth() + "): ");
+        String dayInput = scanner.nextLine();
+        int day = dayInput.isEmpty() ? today.getDayOfMonth() : Integer.parseInt(dayInput);
+
+        System.out.print("(Optional) Enter Month (Press Enter for " + today.getMonthValue() + "): ");
+        String monthInput = scanner.nextLine();
+        int month = monthInput.isEmpty() ? today.getMonthValue() : Integer.parseInt(monthInput);
+
+        // scanner.close();
+        // 3. Assemble the LocalDateTime
+        return LocalDateTime.of(today.getYear(), month, day, hour, min);
     }
 }

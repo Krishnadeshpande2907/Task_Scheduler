@@ -22,12 +22,13 @@ This project is a simple Task Manager running entirely on the terminal, designed
     - Run the application.
     - Enter the task name.
     - Optionally, provide task details.
-    - Input the time the task needs to be done (format: YYYY-MM-DD HH:mm).
+    - Input the time the task needs to be done.
     - Optionally, set a task deadline.
-    - (Future) Set reminders if desired.
+    - Set reminders if desired in the same way.
 
 2. **Task Execution:**
     - When it's time to start the task, type 'started' in the terminal.
+    - If reminders and deadlines are given, you will be reminded at that time.
     - Upon task completion, type 'done' in the same terminal.
 
 3. **Retrieving Task Details:**
@@ -35,16 +36,12 @@ This project is a simple Task Manager running entirely on the terminal, designed
     - Details include task name, optional details, and deadline (if provided).
     - End time of the task and the duration taken will be shown.
 
-## Future Enhancements
-
-- **Reminder System:** Implement a feature to provide reminders at specified intervals.
-- **User Interface:** Develop a user-friendly interface beyond the terminal.
-- **Extended Functionality:** Explore additional features to enhance task management.
-
 ## Technologies Used
 
 - Java
 - `java.time` class
+- Threads
+- Executors
 
 ## Contribution
 

@@ -13,13 +13,15 @@ public class Reminder {
     }
 
     public void repeatingReminders(){
-        int numberOfTimes = Questions.getNumberOfTimes();
-        long interval = Questions.getInterval();
+        Questions question = new Questions();
+        int numberOfTimes = question.getNumberOfTimes();
+        int interval = question.getInterval();
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 
         Runnable reminderTask = () -> {
             for (int i = 0; i < numberOfTimes; i++) {
-                System.out.println("Reminder to do your task: " + Questions.getTask());
+                System.out.println("Reminder to do your task: \n");
+                question.info();
                 try {
                     Thread.sleep(interval * 60 * 1000);
                 } catch (InterruptedException e) {
